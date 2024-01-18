@@ -6,14 +6,15 @@
 #include <map>
 #include "ASpell.hpp"
 #include "ATarget.hpp"
+#include "SpellBook.hpp"
 
 class Warlock
 {
 private:
     std::string _name;
     std::string _title;
-    std::map<std::string, ASpell*>  _spell;
-
+    SpellBook _book; // Instance of SpellBook
+    
     Warlock();
     Warlock(const Warlock& other);
     Warlock& operator=(const Warlock& other);
@@ -38,34 +39,3 @@ public:
 };
 
 #endif
-
-/*
-class Warlock
-{
-private:
-    std::string _name;
-    std::string _title;
-
-public:
-    // Constructor that takes its name and title
-    Warlock(const std::string& name, const std::string& title);
-
-    // Destructor
-    ~Warlock();
-
-    // Deleted copy constructor and copy assignment operator
-    Warlock(const Warlock& other) = delete;
-    Warlock& operator=(const Warlock& other) = delete;
-
-    // Getters
-    const std::string& getName() const;
-    const std::string& getTitle() const;
-
-    // Setter
-    void setTitle(const std::string& title);
-
-    // Introduce function
-    void introduce() const;
-};
-
-*/

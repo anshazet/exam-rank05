@@ -31,15 +31,3 @@ void Warlock::introduce() const
 {
     std::cout << _name << ": I am " << _name << ", " << _title << "!" << std::endl;
 }
-
-// Preventing copying
-Warlock::Warlock(const Warlock &other) : _name(""), _title("")
-{
-    (void)other;
-}
-
-Warlock &Warlock::operator=(const Warlock &other)
-{
-    (void)other;
-    return *this;
-}
