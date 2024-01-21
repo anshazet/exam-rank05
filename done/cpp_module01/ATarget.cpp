@@ -1,28 +1,23 @@
 #include "ATarget.hpp"
-#include "ASpell.hpp"
-#include <iostream>
 
-ATarget::ATarget() {}
+ATarget::ATarget(){}
 
 ATarget::ATarget(const std::string &type) : _type(type) {}
 
-ATarget::ATarget(const ATarget &other)
+ATarget::ATarget(const ATarget& other)
 {
 	*this = other;
 }
 
-ATarget &ATarget::operator=(const ATarget &other)
+ATarget& ATarget::operator=(const ATarget& other)
 {
-	if (this != &other)
-	{
-		_type = other._type;
-	}
+	_type = other._type;
 	return *this;
 }
 
 ATarget::~ATarget() {}
 
-const std::string &ATarget::getType() const
+const std::string& ATarget::getType() const
 {
 	return _type;
 }

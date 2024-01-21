@@ -32,6 +32,34 @@ void Warlock::introduce() const
     std::cout << _name << ": I am " << _name << ", " << _title << "!" << std::endl;
 }
 
+void Warlock::learnSpell(ASpell* spell)
+{
+	if (spell)
+	{
+        _spell[spell->getName()] = spell->clone();
+    }
+}
+
+void Warlock::forgetSpell(std::string name)
+{
+	std::map<std::string, ASpell *>::iterator it = _spell.find(name);
+	if (it != _spell.end())
+	{
+		delete it->second; // Delete the dynamically allocated spell
+		_spell.erase(it);  // Remove the entry from the map
+	}
+}
+
+void Warlock::launchSpell(std::string name, const ATarget &target)
+{
+	std::map<std::string, ASpell *>::const_iterator it = _spell.find(name);
+	if (it != _spell.end())
+	{
+		it->second->launch(target); // Launch the spell if found
+	}
+}
+
+/*
 void    Warlock::learnSpell(ASpell *spell)
 {
     if (spell)
@@ -51,25 +79,5 @@ void    Warlock::launchSpell(std::string name, ATarget const & target)
     ASpell  *aspell = _spell[name];
     if (aspell)
         aspell->launch(target);
-}
-
-/*
-void Warlock::forgetSpell(const std::string& name)
-{
-    auto it = spells.find(name);
-    if (it != spells.end())
-    {
-        delete it->second;
-        spells.erase(it);
-    }
-}
-
-void Warlock::launchSpell(const std::string& name, const ATarget& target)
-{
-    ASpell* spell = spells[name];
-    if (spell)
-    {
-        spell->launch(target);
-    }
 }
 */

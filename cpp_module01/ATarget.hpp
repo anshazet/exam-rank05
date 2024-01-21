@@ -8,7 +8,7 @@ class ASpell;
 class ATarget
 {
 protected:
-    std::string type;
+    std::string _type;
 
 public:
     ATarget();
@@ -21,7 +21,7 @@ public:
 
     virtual ATarget *clone() const = 0;
 
-    void getHitBySpell(const ASpell &spell) const;
+    void getHitBySpell(const ASpell &spell) const; //function that takes a reference to constant ASpell
 };
 
 #endif
