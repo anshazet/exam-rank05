@@ -1,5 +1,5 @@
-#ifndef Dummy_HPP
-#define Dummy_HPP
+#ifndef DUMMY_HPP
+#define DUMMY_HPP
 
 #include "ATarget.hpp"
 

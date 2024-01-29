@@ -40,32 +40,11 @@ public:
 #endif
 
 /*
-class Warlock
-{
-private:
-    std::string _name;
-    std::string _title;
+std::string is the type of the key. In your case, it's the name of the spell.
 
-public:
-    // Constructor that takes its name and title
-    Warlock(const std::string& name, const std::string& title);
+ASpell* is the type of the value. It's a pointer to an ASpell object,
+which represents a spell.
 
-    // Destructor
-    ~Warlock();
-
-    // Deleted copy constructor and copy assignment operator
-    Warlock(const Warlock& other) = delete;
-    Warlock& operator=(const Warlock& other) = delete;
-
-    // Getters
-    const std::string& getName() const;
-    const std::string& getTitle() const;
-
-    // Setter
-    void setTitle(const std::string& title);
-
-    // Introduce function
-    void introduce() const;
-};
-
+_spell is the name of the map.
 */
+

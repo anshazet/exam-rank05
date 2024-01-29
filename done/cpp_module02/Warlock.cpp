@@ -29,5 +29,24 @@ void Warlock::setTitle(const std::string &title)
 void Warlock::introduce() const
 {
 	std::cout << _name << ": I am " << _name << ", " << _title << "!" << std::endl;
+}
 
+void Warlock::learnSpell(ASpell *spell)
+{
+	_book.learnSpell(spell);
+}
+
+void Warlock::forgetSpell(const std::string name)
+{
+	_book.forgetSpell(name);
+}
+
+void Warlock::launchSpell(const std::string name, const ATarget &target)
+{
+	ASpell *spell = _book.createSpell(name);
+	if (spell)
+	{
+		spell->launch(target);
+		delete spell; // Delete the dynamically allocated spell created by createSpell
+	}
 }

@@ -35,7 +35,7 @@ public:
 
     void learnSpell(ASpell* spell);
     void forgetSpell(std::string name);
-    void launchSpell(std::string name, ATarget const & target);
+    void launchSpell(std::string name, const ATarget &target);
 };
 
 #endif

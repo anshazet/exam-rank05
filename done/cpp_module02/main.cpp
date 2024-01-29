@@ -1,14 +1,14 @@
 #include "ASpell.hpp"
 #include "ATarget.hpp"
-#include "Dummy.hpp"
 #include "Fwoosh.hpp"
+#include "Dummy.hpp"
 #include "Warlock.hpp"
-#include "Fireball.hpp"
 #include "BrickWall.hpp"
+#include "Fireball.hpp"
 #include "Polymorph.hpp"
+#include "SpellBook.hpp"
 #include "TargetGenerator.hpp"
 
-//  c++ -Wall -Wextra -Werror -std=c++98 main.cpp Warlock.cpp ASpell.cpp ATarget.cpp Dummy.cpp Fwoosh.cpp Fireball.cpp Polymorph.cpp BrickWall.cpp SpellBook.cpp TargetGenerator.cpp
 
 int main()
 {

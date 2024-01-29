@@ -35,9 +35,7 @@ void Warlock::introduce() const
 void Warlock::learnSpell(ASpell* spell)
 {
 	if (spell)
-	{
         _spell[spell->getName()] = spell->clone();
-    }
 }
 
 void Warlock::forgetSpell(std::string name)
@@ -60,6 +58,33 @@ void Warlock::launchSpell(std::string name, const ATarget &target)
 }
 
 /*
+if (spell) { ... }: Checks if the spell pointer is not null.
+_spell[spell->getName()] = spell->clone();: This line does two things:
+spell->getName(): Gets the name of the spell.
+_spell[...] = spell->clone();: Clones the spell (creating a new dynamically
+allocated copy) and stores it in the map with the spell's name as the key.
+If a spell with the same name already exists, it's replaced.
+
+std::map<std::string, ASpell*>::iterator it = _spell.find(name);: Searches
+for the spell by name and stores an iterator to the found element in it.
+if (it != _spell.end()) { ... }: Checks if the spell was found (the iterator
+is not equal to _spell.end(), which signifies the end of the map).
+delete it->second;: Deletes the dynamically allocated ASpell object pointed
+to by the iterator.
+_spell.erase(it);: Removes the element (both key and value) from the map.
+
+
+std::map<std::string, ASpell*>::const_iterator it = _spell.find(name);: Searches
+for the spell by its name.
+if (it != _spell.end()) { ... }: Checks if the spell was found.
+it->second->launch(target);: If the spell is found, launches it at the target.
+it->second gives the pointer to the ASpell object, and launch(target) invokes
+the launch method on that spell.
+*/
+
+
+
+/*
 void    Warlock::learnSpell(ASpell *spell)
 {
     if (spell)
@@ -73,6 +98,7 @@ void    Warlock::forgetSpell(std::string name)
         delete it->second;
     _spell.erase(name);
 }
+
 
 void    Warlock::launchSpell(std::string name, ATarget const & target)
 {
