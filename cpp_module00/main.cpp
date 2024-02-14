@@ -1,7 +1,5 @@
 #include "Warlock.hpp"
 
-// c++ -Wall -Wextra -Werror -std=c++98 Warlock.cpp Warlock.hpp main.cpp
-
 int main()
 {
   Warlock const richard("Richard", "Mistress of Magma");
