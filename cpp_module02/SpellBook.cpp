@@ -12,11 +12,7 @@ SpellBook::~SpellBook()
 
 void SpellBook::learnSpell(ASpell *spell)
 {
-	if (spell)
-	{
-		_spell[spell->getName()] = spell->clone();
-	}
-
+	_spell[spell->getName()] = spell->clone();
 }
 
 void SpellBook::forgetSpell(const std::string &name)

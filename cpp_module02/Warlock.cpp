@@ -42,23 +42,13 @@ void Warlock::forgetSpell(std::string name)
 	_book.forgetSpell(name);
 }
 
-// void Warlock::launchSpell(std::string name, const ATarget &target)
-// {
-// 	ASpell *spell = _book.createSpell(name);
-// 	if (spell)
-// 	{
-// 		spell->launch(target);
-// 		delete spell;
-// 	}
-// }
-
-
-void Warlock::launchSpell(std::string name, ATarget const &target)
+void Warlock::launchSpell(std::string name, const ATarget &target)
 {
-    ATarget const *test = 0;
-    if (test == &target)
-        return ;
-    ASpell  *tmp = _book.createSpell(name);
-    if (tmp)
-        tmp->launch(target);
+	ASpell *spell = _book.createSpell(name);
+	if (spell)
+	{
+		spell->launch(target);
+		delete spell;
+	}
 }
+

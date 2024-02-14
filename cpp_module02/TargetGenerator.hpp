@@ -21,7 +21,6 @@ public:
 	void forgetTargetType(const std::string &type);
 	ATarget* createTarget(const std::string &type);
 
-
 };
 
 #endif 

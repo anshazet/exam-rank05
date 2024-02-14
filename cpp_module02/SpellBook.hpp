@@ -21,7 +21,6 @@ public:
 	void forgetSpell(const std::string &name);
 	ASpell* createSpell(const std::string &name);
 
-
 };
 
 #endif

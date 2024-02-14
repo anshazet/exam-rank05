@@ -13,11 +13,7 @@ TargetGenerator::~TargetGenerator()
 void TargetGenerator::learnTargetType(ATarget *target)
 
 {
-	if (target)
-	{
-		_target[target->getType()] = target->clone();
-	}
-
+	_target[target->getType()] = target->clone();
 }
 
 void TargetGenerator::forgetTargetType(const std::string &type)
@@ -35,13 +31,5 @@ ATarget* TargetGenerator::createTarget(const std::string &type)
 		return it->second->clone();
 	return NULL;
 }
-
-// ATarget *TargetGenerator::createTarget(std::string const &type)
-// {
-//     std::map<std::string, ATarget*>::iterator   it = _target.find(type);
-//     if (it != _target.end())
-//         return _target[type];
-//     return (NULL);
-// }
 
 

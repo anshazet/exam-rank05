@@ -9,7 +9,6 @@ public:
 	Polymorph();
 	virtual~Polymorph();
 	virtual Polymorph *clone()const;
-//	ASpell *clone()const;
 };
 
 #endif

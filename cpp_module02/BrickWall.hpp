@@ -8,8 +8,7 @@ class BrickWall : public ATarget
 public:
 	BrickWall();
 	virtual~BrickWall();
-//	virtual BrickWall *clone()const;
-	ATarget *clone() const;
+	virtual BrickWall *clone()const;
 
 };
 

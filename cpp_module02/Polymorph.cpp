@@ -8,8 +8,3 @@ Polymorph* Polymorph::clone()const
 {
 	return new Polymorph(*this);
 }
-
-// ASpell  *Polymorph::clone() const
-// {
-//     return (new Polymorph());
-// }
